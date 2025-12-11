@@ -1,49 +1,60 @@
-// === 1️⃣ Message de bienvenue à l'ouverture ===
 window.onload = function() {
+  // === 1️⃣ Message de bienvenue ===
   alert("Bienvenue sur le site officiel de Littelmask & Sharky !");
 
-  // === 2️⃣ Mettre l'heure actuelle dans le footer ===
+  // === 2️⃣ Mettre l'heure dans le footer ===
   const footer = document.querySelector("footer");
   const date = new Date();
   const heure = date.getHours().toString().padStart(2, '0');
   const minutes = date.getMinutes().toString().padStart(2, '0');
   footer.innerHTML += ` | Heure actuelle : ${heure}:${minutes}`;
 
-  // === 3️⃣ Création du compteur de clics pour YouTube ===
+  // === 3️⃣ Lien YouTube dynamique et compteur ===
   const youtubeLink = document.querySelector('a[href*="youtube.com"]');
   let clickCount = 0;
-
   youtubeLink.addEventListener("click", () => {
     clickCount++;
     console.log(`Lien YouTube cliqué ${clickCount} fois`);
   });
 
-  // === 4️⃣ Changement de couleur du header au survol ===
+  youtubeLink.addEventListener("mouseover", () => {
+    youtubeLink.textContent = "Clique ici pour notre chaîne YouTube !";
+  });
+
+  youtubeLink.addEventListener("mouseout", () => {
+    youtubeLink.textContent = "Chaîne YouTube";
+  });
+
+  // === 4️⃣ Changement de couleur du header ===
   const header = document.querySelector("header");
   header.addEventListener("mouseover", () => header.style.backgroundColor = "#8B0000");
   header.addEventListener("mouseout", () => header.style.backgroundColor = "#C41414");
 
-  // === 5️⃣ Texte dynamique sur le lien YouTube au survol ===
-  youtubeLink.addEventListener("mouseover", function() {
-    youtubeLink.textContent = "Clique ici pour notre chaîne YouTube !";
-  });
-
-  youtubeLink.addEventListener("mouseout", function() {
-    youtubeLink.textContent = "Chaîne YouTube";
-  });
-
-  // === 6️⃣ Bouton surprise qui change le texte d'un paragraphe ===
-  const main = document.querySelector("main");
+  // === 5️⃣ Bouton surprise en bas à gauche ===
   const surpriseBtn = document.createElement("button");
-  surpriseBtn.textContent = "Clique ici pour une surprise !";
-  surpriseBtn.style.marginTop = "20px";
-  surpriseBtn.style.padding = "10px 20px";
+  surpriseBtn.textContent = "Surprise !";
+  surpriseBtn.style.position = "fixed";
+  surpriseBtn.style.bottom = "50px"; // juste au-dessus du footer
+  surpriseBtn.style.left = "20px";
+  surpriseBtn.style.padding = "5px 10px";
+  surpriseBtn.style.fontSize = "12px";
   surpriseBtn.style.cursor = "pointer";
-  main.appendChild(surpriseBtn);
+  surpriseBtn.style.backgroundColor = "#C41414";
+  surpriseBtn.style.color = "white";
+  surpriseBtn.style.border = "none";
+  surpriseBtn.style.borderRadius = "5px";
+  document.body.appendChild(surpriseBtn);
 
+  // Paragraphe pour le message surprise
   const surpriseText = document.createElement("p");
-  surpriseText.textContent = "";
-  main.appendChild(surpriseText);
+  surpriseText.style.position = "fixed";
+  surpriseText.style.bottom = "80px";
+  surpriseText.style.left = "20px";
+  surpriseText.style.backgroundColor = "#FFF3";
+  surpriseText.style.padding = "5px 10px";
+  surpriseText.style.borderRadius = "5px";
+  surpriseText.style.fontSize = "14px";
+  document.body.appendChild(surpriseText);
 
   surpriseBtn.addEventListener("click", function() {
     const messages = [
@@ -55,7 +66,7 @@ window.onload = function() {
     surpriseText.textContent = randomMsg;
   });
 
-  // === 7️⃣ Message secret au clic sur le header ===
+  // === 6️⃣ Message secret au clic sur le header ===
   header.addEventListener("click", function() {
     alert("🤫 Message secret : Littelmask & Sharky vous remercient !");
   });
