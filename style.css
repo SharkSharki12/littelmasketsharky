@@ -1,18 +1,15 @@
-/* Style général et flex pour le footer */
+/* ===== Global ===== */
 html, body {
   height: 100%;
   margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
   font-family: Arial, sans-serif;
   background-color: #FFFFFF;
   color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
-/* En-tête */
+/* ===== Header ===== */
 header {
   background-color: #C41414;
   color: white;
@@ -20,16 +17,41 @@ header {
   text-align: center;
 }
 
-/* Contenu principal */
-main {
-  flex: 1; /* prend tout l'espace disponible pour pousser le footer en bas */
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
+/* ===== Footer ===== */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
   text-align: center;
+  width: 100%;
 }
 
-/* Liens */
+/* ===== Main ===== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Page 1 - texte centré et grand ===== */
+.full-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.center-text {
+  text-align: center;
+  font-size: 2.5em; /* agrandi le texte */
+  max-width: 90%;
+  line-height: 1.5;
+}
+
+/* ===== Liens ===== */
 a {
   color: #C41414;
   text-decoration: none;
@@ -40,13 +62,29 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
-footer {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
+/* ===== Page 2 - vidéos scrollables ===== */
+.video-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 140px); /* hauteur - header/footer */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
+  max-width: 800px;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
 }
 
 
