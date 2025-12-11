@@ -1,29 +1,46 @@
+/* Style général */
 body {
   font-family: Arial, sans-serif;
   background-color: #FFFFFF;
   text-align: center;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
+/* En-tête */
 header {
   background-color: #C41414;
   color: white;
   padding: 20px 0;
 }
 
+/* Contenu principal */
 main {
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
+  text-align: center;
 }
 
+/* Liens */
+a {
+  color: #C41414;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page */
 footer {
   background-color: #333;
   color: white;
   padding: 10px 0;
-  position: fixed;
   width: 100%;
-  bottom: 0;
+  margin-top: 20px;
 }
-
 
 
