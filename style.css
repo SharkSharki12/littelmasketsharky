@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #4CAF50;
+  background-color: #FFFFFF;
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: #C41414;
   color: white;
   padding: 20px 0;
 }
@@ -24,5 +24,6 @@ footer {
   width: 100%;
   bottom: 0;
 }
+
 
 
