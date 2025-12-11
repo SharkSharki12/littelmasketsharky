@@ -1,10 +1,14 @@
-/* Style général */
+/* Style général et flex pour le footer */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   background-color: #FFFFFF;
-  text-align: center;
-  margin: 0;
-  padding: 0;
   color: #333;
 }
 
@@ -13,10 +17,12 @@ header {
   background-color: #C41414;
   color: white;
   padding: 20px 0;
+  text-align: center;
 }
 
 /* Contenu principal */
 main {
+  flex: 1; /* prend tout l'espace disponible pour pousser le footer en bas */
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
@@ -34,13 +40,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Pied de page */
+/* Footer */
 footer {
   background-color: #333;
   color: white;
   padding: 10px 0;
+  text-align: center;
   width: 100%;
-  margin-top: 20px;
 }
+
 
 
